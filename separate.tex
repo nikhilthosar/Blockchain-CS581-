@@ -1,0 +1,25 @@
+\documentclass[a4paper]{article}
+\usepackage[box,completemulti,separateanswersheet]{automultiplechoice}
+\input{include/boilerPlate.tex}
+
+\begin{document}
+
+\AMCrandomseed{1237893}
+\def\AMCformQuestion#1{{\sc Q #1:}}    
+\setdefaultgroupmode{withoutreplacement}
+
+
+\input{include/questions.tex}
+\input{include/class1.tex}
+
+\onecopy{3}{
+  \input{include/testSheetHeader.tex}
+  \separator{\LARGE Multiple Choice Questions}
+  \insertgroup{class1}
+  \separator{\LARGE Other Questions}
+  \insertgroup{mcq}
+  \input{include/answerSheet.tex}
+  \AMCcleardoublepage    
+}
+
+\end{document}
